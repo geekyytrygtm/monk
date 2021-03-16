@@ -1,0 +1,164 @@
+@font-face{
+    font-family: "monkWebFontMedium";
+    src: url("./assets/font/klavika-medium-webfont.woff") 
+}
+
+@font-face{
+    font-family: "monkWebFontLight";
+    src: url("./assets/font/klavika-light-webfont.woff") 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    font-family: "monkWebFontMedium";
+    color: seashell;
+    overflow: hidden;
+}
+
+.wrapper .container{
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .loader{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wrapper .loader p{
+    margin-top: 1rem;
+}
+
+.wrapper .loader img{
+    border-radius: 40%;
+    background: radial-gradient(closest-corner, lightgrey, grey);
+    background-size: auto 50%;
+    animation: monkFloat 3s ease-in-out 0.1s;
+    visibility: hidden;
+    height: 1%;
+    opacity: 0.7;
+}
+
+.wrapper .loader p span:nth-child(1){
+    visibility: hidden;
+    animation: patience 3s cubic-bezier(0.54, -0.1, 0.6, 1.4) 0.5s;
+}
+
+.wrapper .loader p span:nth-child(2){
+    visibility: hidden;
+    animation: patience 2.5s cubic-bezier(0.54, -0.1, 0.6, 1.4) 1s;
+}
+
+@keyframes monkFloat{
+    0%{
+        visibility: visible;
+    }
+    40%, 80% {
+        transform: translateY(0.5%);
+    }
+    20%, 60% {
+        transform: translateY(3%);
+    } 
+    100%{
+        transform: translateY(6%);
+    }    
+}   
+
+@keyframes patience{
+    0%{
+        visibility: visible;
+        transform: translateX(-10%)
+    }
+    50%{
+        transform: translateX(-5%)
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+.wrapper ul li {
+    list-style-type: none;
+    display: inline;
+    line-height: 1vh;
+    border: 1px dotted seashell;
+}
+
+.wrapper .slider{
+    background-image: url("./assets/images/background.jpg");
+    background-position: 0 0;
+    width: 700%;
+    height: 100vh;
+    background-size: contain;
+    display: none;
+}
+
+.wrapper .slider .prev, .wrapper .slider .next{
+    position: absolute;
+    top: 45%;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.wrapper .slider .prev:hover, .wrapper .slider .next:hover{
+    color: grey;
+    cursor: pointer;
+}
+
+.wrapper .slider .prev{
+    left: 0.5%;
+}
+
+.wrapper .slider .next{
+    right: 0.5%;
+}
+
+.wrapper .slider .logo{
+    position: absolute;
+    right: 1em;
+    bottom: 0;
+    fill: seashell;
+}
+
+.slider ul{
+    width: 65%;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 12px;
+}
+
+.slider ul li:last-child{
+    padding-left: 30px;
+    font-family: "monkWebFontLight";
+    cursor: none;
+}
+
+.slider ul li span{
+    margin-left: 0;
+    padding: 10px;
+    font-family: "monkWebFontLight";
+    cursor: pointer;
+}
+
+.slider li.pathText{
+    margin-left: 2%;
+    border: none;
+}
+
+.slider .sliderText{
+    width: 20%;
+    height: 35vh;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    position: absolute;
+}
